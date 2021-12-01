@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.javaminiproject.MainController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #232629;">
+         <children>
+            <Label prefHeight="59.0" prefWidth="228.0" style="-fx-background-color: #25E6CA;" text="    Menu" textFill="#f46262">
+               <font>
+                  <Font name="Symbol" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <TextField fx:id="Eventname" layoutX="278.0" layoutY="89.0" />
+      <TextField fx:id="EventDetails" layoutX="279.0" layoutY="155.0" prefHeight="59.0" prefWidth="295.0" />
+      <TextField fx:id="EventCatergory" layoutX="279.0" layoutY="232.0" />
+      <TextField fx:id="EventTime" layoutX="280.0" layoutY="317.0" />
+      <TextField fx:id="EventDate" layoutX="281.0" layoutY="401.0" />
+      <Button layoutX="446.0" layoutY="485.0" mnemonicParsing="false" onAction="#update" text="save change" />
+      <Button layoutX="229.0" layoutY="34.0" mnemonicParsing="false" onAction="#SwitchToMainPage" text="back" />
+      <Button layoutX="627.0" layoutY="53.0" mnemonicParsing="false" onAction="#uRefresh" text="refresh" />
+      <TextField fx:id="EventLink" layoutX="280.0" layoutY="449.0" />
+   </children>
+</AnchorPane>

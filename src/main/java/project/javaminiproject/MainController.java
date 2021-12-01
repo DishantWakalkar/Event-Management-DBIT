@@ -17,8 +17,6 @@ import javafx.scene.control.PasswordField;
 import java.io.IOException;
 import java.util.Objects;
 import java.sql.*;
-import java.io.File;
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.Statement;
 
@@ -26,7 +24,7 @@ public class MainController {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    public int a = 1;
+    public static int a = 1;
     @FXML
     private Text eName;
     @FXML
@@ -77,11 +75,12 @@ public class MainController {
         return false;
     }
     public void next(ActionEvent event) throws IOException {
+        if (a<getMaxId()){
         a++;
         while(!check(a)&&(a<getMaxId()))
             a++;
         if (check(a))
-            initial(event);
+            initial(event);}
     }
     public void prev(ActionEvent event) throws IOException {
         if (a>1){
@@ -99,10 +98,11 @@ public class MainController {
         String delete = "DELETE FROM Event_Details WHERE eId='"+a+"'";
         try {
             Statement statement = connectDB.createStatement();
-            statement.executeQuery(delete);
+            statement.execute(delete);
         } catch (Exception event) {
             event.printStackTrace();
         }
+        prev(e);
     }
     //search
     @FXML
@@ -127,15 +127,15 @@ public class MainController {
     @FXML
     private Button Login;
     @FXML
-    private TextField usernametextfield;
+    private TextField username;
     @FXML
-    private PasswordField passwordtextfield;
+    private PasswordField password;
     @FXML
     private TextField cancel;
 
     public void LoginOnAction(ActionEvent event) throws IOException {
         //Login.setText("Invalid Login!");
-        if (!usernametextfield.getText().isBlank() && !passwordtextfield.getText().isBlank()) {
+        if (!username.getText().isBlank() && !password.getText().isBlank()) {
             error.setText("Try again");
             if (validateLogin()) {
                 SwitchToMainPage(event);
@@ -146,15 +146,14 @@ public class MainController {
     }
 
 
-
-    public boolean validateLogin() throws IOException {
+    public boolean validateLogin(){
         DatabaseConnection connection = new DatabaseConnection();
         Connection connectDB = connection.getConnected();
-
-        String verifylogin = "SELECT count(1) FROM Registration_details WHERE username='" + usernametextfield.getText() + "'AND password='" + passwordtextfield.getText() + "'";
+        String verifylogin = "SELECT count(1) FROM Registration_details WHERE username='" + username.getText() + "'AND password='" + password.getText() + "'";
         try {
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifylogin);
+
             while (queryResult.next()) {
                 return queryResult.getInt(1) == 1;
             }
@@ -200,8 +199,8 @@ public class MainController {
     public void registerdetails(ActionEvent e) {
         DatabaseConnection connection = new DatabaseConnection();
         Connection connectDB = connection.getConnected();
-        String rdetails = "INSERT INTO Registration_details(Firstname,Lastname,Phonenumber,Emailid,Username,Password) VALUES ('" + fName.getText() + "','" + lName.getText() + "','" + num.getText() + "','" + email.getText() + "','" + usernametextfield.getText() + "','" + passwordtextfield.getText() + "')";
-        if (!fName.getText().isEmpty() && !lName.getText().isEmpty() && !num.getText().isEmpty() && !usernametextfield.getText().isEmpty() && !passwordtextfield.getText().isEmpty()) {
+        String rdetails = "INSERT INTO Registration_details(Firstname,Lastname,Phonenumber,Emailid,Username,Password) VALUES ('" + fName.getText() + "','" + lName.getText() + "','" + num.getText() + "','" + email.getText() + "','" + username.getText() + "','" + password.getText() + "')";
+        if (!fName.getText().isEmpty() && !lName.getText().isEmpty() && !num.getText().isEmpty() && !username.getText().isEmpty() && !password.getText().isEmpty()) {
             try {
                 Statement statement = connectDB.createStatement();
                 int a = statement.executeUpdate(rdetails);
@@ -243,7 +242,6 @@ public class MainController {
     private TextField EventTime;
     @FXML
     private Label Incomplete;
-
     public void createEvent(ActionEvent e) {
         DatabaseConnection connection = new DatabaseConnection();
         Connection connectDB = connection.getConnected();
@@ -263,6 +261,45 @@ public class MainController {
         }
     }
 
+    //Update
+    public void uRefresh(ActionEvent event){
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection connectDB = connection.getConnected();
+        String getename = "SELECT * FROM Event_Details where eId=" + a;
+        try {
+            Statement statement = connectDB.createStatement();
+            ResultSet resultSet = statement.executeQuery(getename);
+            while (resultSet.next()) {
+                Eventname.setText(resultSet.getString("EventName"));
+                EventCatergory.setText(resultSet.getString("EventCategory"));
+                EventDetails.setText(resultSet.getString("EventDetails"));
+                EventDate.setText(resultSet.getString("EventDate"));
+                EventTime.setText(resultSet.getString("EventTime"));
+                EventLink.setText(resultSet.getString("EventLink"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void update(ActionEvent event) throws IOException {
+        if (!Eventname.getText().isBlank()&&!EventDetails.getText().isBlank()&&!EventDate.getText().isBlank()&&!EventTime.getText().isBlank()&&!EventLink.getText().isBlank()&&!EventCatergory.getText().isBlank()){
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection connectDB = connection.getConnected();
+        String u ="UPDATE Event_Details SET EventName='"+Eventname.getText()+"',EventCategory='"+EventCatergory.getText()+"',EventLink='"+EventLink.getText()+"',EventDetails='"+EventDetails.getText()+"',EventDate='"+EventDate.getText()+"',EventTime='"+EventTime.getText()+"' WHERE eId="+a;
+        try {
+            Statement statement = connectDB.createStatement();
+            statement.executeUpdate(u);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        SwitchToMainPage(event);
+        }
+    }
+
+    @FXML
+    private Button addevent;
+    @FXML
+    private Button delete;
     //switch to pages
     public void SwitchToCreateEventPage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("createevent.fxml")));
@@ -290,6 +327,12 @@ public class MainController {
     }
     public void switchToforgotpage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("forgotuserpass.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+    public void switchToupdate(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("update.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
