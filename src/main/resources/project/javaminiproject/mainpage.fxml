@@ -12,12 +12,12 @@
    <children>
       <Pane layoutY="1.0" prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #1c1c1c;">
          <children>
-            <Label layoutY="-1.0" prefHeight="55.0" prefWidth="220.0" style="-fx-background-color: #78137b;" text="            Menu" textAlignment="CENTER" textFill="WHITE">
+            <Label layoutY="-1.0" prefHeight="55.0" prefWidth="220.0" style="-fx-background-color: #78137b;" text="          Menu" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Perpetua Bold" size="27.0" />
                </font>
             </Label>
-            <Button alignment="CENTER" contentDisplay="TOP" layoutX="-6.0" layoutY="484.0" mnemonicParsing="false" onAction="#SwitchTologinpage" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #1c1c1c;" text="Log Out" textFill="#78137b">
+            <Button alignment="CENTER" contentDisplay="TOP" layoutY="484.0" mnemonicParsing="false" onAction="#SwitchTologinpage" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #1c1c1c;" text="Log Out" textAlignment="CENTER" textFill="#78137b">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -88,7 +88,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button layoutX="731.0" layoutY="67.0" mnemonicParsing="false" onAction="#initial" style="-fx-background-color: #ffffff;" text="Refresh" textFill="#1e7dbc">
+      <Button layoutX="651.0" layoutY="48.0" mnemonicParsing="false" onAction="#initial" style="-fx-background-color: #ffffff;" text="Refresh" textFill="#1e7dbc">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
