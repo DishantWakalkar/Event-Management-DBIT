@@ -13,7 +13,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.javaminiproject.MainController">
    <children>
-      <VBox prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #232629;">
+      <VBox prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #1c1c1c;">
          <children>
             <Label prefHeight="59.0" prefWidth="228.0" style="-fx-background-color: #79137c;" text="  UPDATE" textAlignment="CENTER" textFill="WHITE">
                <font>
