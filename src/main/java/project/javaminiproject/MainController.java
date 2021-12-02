@@ -256,7 +256,7 @@ public class MainController {
                 Statement statement = connectDB.createStatement();
                 int b = statement.executeUpdate(createvent);
                 if (b == 1) {
-                    SwitchToMainPage(e);
+                    switchToadmin(e);
                 }
             } catch (Exception event) {
                 event.printStackTrace();

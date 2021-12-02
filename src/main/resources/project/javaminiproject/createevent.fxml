@@ -59,7 +59,7 @@
       <Label layoutX="199.0" layoutY="396.0" prefHeight="25.0" prefWidth="301.0" />
       <Label fx:id="Incomplete" layoutX="386.0" layoutY="456.0" />
       <TextField fx:id="EventDate" layoutX="478.0" layoutY="349.0" prefHeight="25.0" prefWidth="301.0" promptText="Enter Date in Format DD/MM/YYYY" />
-      <Button layoutX="411.0" layoutY="20.0" mnemonicParsing="false" onAction="#SwitchToMainPage" prefHeight="33.0" prefWidth="113.0" style="-fx-background-color: #79137c;" text="Go Back" textFill="WHITE">
+      <Button layoutX="411.0" layoutY="20.0" mnemonicParsing="false" onAction="#switchToadmin" prefHeight="33.0" prefWidth="113.0" style="-fx-background-color: #79137c;" text="Go Back" textFill="WHITE">
          <font>
             <Font name="Symbol" size="16.0" />
          </font></Button>
