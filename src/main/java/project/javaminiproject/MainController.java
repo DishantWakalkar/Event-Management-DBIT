@@ -287,17 +287,17 @@ public class MainController {
         }
     }
     public void update(ActionEvent event) throws IOException {
-        if (!Eventname.getText().isBlank()&&!EventDetails.getText().isBlank()&&!EventDate.getText().isBlank()&&!EventTime.getText().isBlank()&&!EventLink.getText().isBlank()&&!EventCatergory.getText().isBlank()){
-        DatabaseConnection connection = new DatabaseConnection();
-        Connection connectDB = connection.getConnected();
-        String u ="UPDATE Event_Details SET EventName='"+Eventname.getText()+"',EventCategory='"+EventCatergory.getText()+"',EventLink='"+EventLink.getText()+"',EventDetails='"+EventDetails.getText()+"',EventDate='"+EventDate.getText()+"',EventTime='"+EventTime.getText()+"' WHERE eId="+a;
-        try {
-            Statement statement = connectDB.createStatement();
-            statement.executeUpdate(u);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        SwitchToMainPage(event);
+        if (!Eventname.getText().isBlank()&&!EventDetails.getText().isBlank()&&!EventDate.getText().isBlank()&&!EventTime.getText().isBlank()&&!EventLink.getText().isBlank()&&!EventCatergory.getText().isBlank()) {
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnected();
+            String u = "UPDATE Event_Details SET EventName='" + Eventname.getText() + "',EventCategory='" + EventCatergory.getText() + "',EventLink='" + EventLink.getText() + "',EventDetails='" + EventDetails.getText() + "',EventDate='" + EventDate.getText() + "',EventTime='" + EventTime.getText() + "' WHERE eId=" + a;
+            try {
+                Statement statement = connectDB.createStatement();
+                statement.executeUpdate(u);
+                switchToadmin(event);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
