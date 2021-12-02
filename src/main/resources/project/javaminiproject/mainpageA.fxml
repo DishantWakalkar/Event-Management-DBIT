@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.javaminiproject.MainController">
+   <children>
+      <Pane layoutY="1.0" prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #1c1c1c;">
+         <children>
+            <Label layoutY="-1.0" prefHeight="55.0" prefWidth="220.0" style="-fx-background-color: #78137b;" text="            Menu" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Perpetua Bold" size="27.0" />
+               </font>
+            </Label>
+            <Button fx:id="addevent" alignment="CENTER" contentDisplay="TOP" layoutY="124.0" mnemonicParsing="false" onAction="#SwitchToCreateEventPage" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #1c1c1c;" text="Add Events" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutY="167.0" mnemonicParsing="false" onAction="#switchToupdate" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #1c1c1c;" text="Update" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="TOP" layoutX="-6.0" layoutY="484.0" mnemonicParsing="false" onAction="#SwitchTologinpage" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #1c1c1c;" text="Log Out" textFill="#78137b">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+      <Text fx:id="eName" layoutX="255.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="512.2699584960938">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Label layoutX="274.0" layoutY="143.0" prefHeight="28.0" prefWidth="38.0" text="Time:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="eTime" layoutX="382.0" layoutY="148.0" prefHeight="18.0" prefWidth="297.0" text="Label" textFill="#78137b">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </Label>
+      <Label layoutX="273.0" layoutY="200.0" prefHeight="28.0" prefWidth="57.0" text="Details:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="eDetails" layoutX="382.0" layoutY="205.0" prefHeight="18.0" prefWidth="297.0" text="Label" textFill="#78137b">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </Label>
+      <Label layoutX="273.0" layoutY="257.0" prefHeight="28.0" prefWidth="57.0" text="Date:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="eDate" layoutX="383.0" layoutY="262.0" prefHeight="18.0" prefWidth="297.0" text="Label" textFill="#78137b">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </Label>
+      <Label layoutX="273.0" layoutY="314.0" prefHeight="28.0" prefWidth="57.0" text="Link:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="eLink" layoutX="383.0" layoutY="319.0" prefHeight="18.0" prefWidth="297.0" text="Label" textFill="#78137b">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </Label>
+      <Button layoutX="482.0" layoutY="408.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: #78137b;" text="Delete" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="332.0" layoutY="408.0" mnemonicParsing="false" onAction="#prev" style="-fx-background-color: #78137b;" text="Prev" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="632.0" layoutY="408.0" mnemonicParsing="false" onAction="#next" style="-fx-background-color: #78137b;" text="Next" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="731.0" layoutY="67.0" mnemonicParsing="false" onAction="#initial" style="-fx-background-color: #ffffff;" text="Refresh" textFill="#1e7dbc">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>
