@@ -135,6 +135,10 @@ public class MainController {
 
     public void LoginOnAction(ActionEvent event) throws IOException {
         //Login.setText("Invalid Login!");
+        if (Objects.equals(username.getText(), "admin") && Objects.equals(password.getText(), "admin")){
+            switchToadmin(event);
+        }
+        else{
         if (!username.getText().isBlank() && !password.getText().isBlank()) {
             error.setText("Try again");
             if (validateLogin()) {
@@ -143,6 +147,7 @@ public class MainController {
         } else {
             error.setText("Enter your Username and Password");
         }
+    }
     }
 
 
@@ -333,6 +338,12 @@ public class MainController {
     }
     public void switchToupdate(ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("update.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+    public void switchToadmin(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("mainpageA.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
