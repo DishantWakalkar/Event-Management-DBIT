@@ -28,7 +28,7 @@
             <Font size="14.0" />
          </font>
       </TextField>
-        <Button id="Login" fx:id="Login" layoutX="610.0" layoutY="442.0" mnemonicParsing="false" onAction="#LoginOnAction" prefHeight="44.0" prefWidth="86.0" style="-fx-background-color: #79137c;" text="Login" textFill="WHITE">
+        <Button id="Login" fx:id="Login" layoutX="457.0" layoutY="428.0" mnemonicParsing="false" onAction="#LoginOnAction" prefHeight="44.0" prefWidth="97.0" style="-fx-background-color: #79137c;" text="Login" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
@@ -43,12 +43,12 @@
             <Font size="14.0" />
          </font>
       </PasswordField>
-      <Button layoutX="518.0" layoutY="505.0" mnemonicParsing="false" onAction="#SwitchToRegister" prefHeight="44.0" prefWidth="108.0" style="-fx-background-color: #79137c;" text="Register" textFill="WHITE">
+      <Button layoutX="606.0" layoutY="428.0" mnemonicParsing="false" onAction="#SwitchToRegister" prefHeight="44.0" prefWidth="97.0" style="-fx-background-color: #79137c;" text="Register" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="Cancel" layoutX="454.0" layoutY="442.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="86.0" style="-fx-background-color: #79137c;" text="Cancel" textFill="WHITE">
+      <Button fx:id="Cancel" layoutX="531.0" layoutY="496.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="97.0" style="-fx-background-color: #79137c;" text="Cancel" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

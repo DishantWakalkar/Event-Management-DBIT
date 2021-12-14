@@ -6,12 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.scene.control.PasswordField;
 
 
 import java.io.IOException;
@@ -242,7 +239,7 @@ public class MainController {
     @FXML
     private TextField EventDetails;
     @FXML
-    private TextField EventDate;
+    private DatePicker EventDate;
     @FXML
     private TextField EventTime;
     @FXML
@@ -250,8 +247,8 @@ public class MainController {
     public void createEvent(ActionEvent e) {
         DatabaseConnection connection = new DatabaseConnection();
         Connection connectDB = connection.getConnected();
-        String createvent = "INSERT INTO Event_Details(EventName,EventCategory,EventLink,EventDetails,EventDate,EventTime,eId) VALUES ('" + Eventname.getText() + "','" + EventCatergory.getText() + "','" + EventLink.getText() + "','" + EventDetails.getText() + "','" + EventDate.getText() + "','" + EventTime.getText() + "','" + (1 + getMaxId()) + "')";
-        if (!Eventname.getText().isEmpty() && !EventCatergory.getText().isEmpty() && !EventLink.getText().isEmpty() && !EventDetails.getText().isEmpty() && !EventDate.getText().isEmpty() && !EventTime.getText().isEmpty()) {
+        String createvent = "INSERT INTO Event_Details(EventName,EventCategory,EventLink,EventDetails,EventDate,EventTime,eId) VALUES ('" + Eventname.getText() + "','" + EventCatergory.getText() + "','" + EventLink.getText() + "','" + EventDetails.getText() + "','" + ((TextField) EventDate.getEditor()).getText() + "','" + EventTime.getText() + "','" + (1 + getMaxId()) + "')";
+        if (!Eventname.getText().isEmpty() && !EventCatergory.getText().isEmpty() && !EventLink.getText().isEmpty() && !EventDetails.getText().isEmpty() && !((TextField) EventDate.getEditor()).getText().isEmpty() && !EventTime.getText().isEmpty()) {
             try {
                 Statement statement = connectDB.createStatement();
                 int b = statement.executeUpdate(createvent);
@@ -278,7 +275,7 @@ public class MainController {
                 Eventname.setText(resultSet.getString("EventName"));
                 EventCatergory.setText(resultSet.getString("EventCategory"));
                 EventDetails.setText(resultSet.getString("EventDetails"));
-                EventDate.setText(resultSet.getString("EventDate"));
+                ((TextField) EventDate.getEditor()).setText(resultSet.getString("EventDate"));
                 EventTime.setText(resultSet.getString("EventTime"));
                 EventLink.setText(resultSet.getString("EventLink"));
             }
@@ -287,10 +284,10 @@ public class MainController {
         }
     }
     public void update(ActionEvent event) throws IOException {
-        if (!Eventname.getText().isBlank()&&!EventDetails.getText().isBlank()&&!EventDate.getText().isBlank()&&!EventTime.getText().isBlank()&&!EventLink.getText().isBlank()&&!EventCatergory.getText().isBlank()) {
+        if (!Eventname.getText().isBlank()&&!EventDetails.getText().isBlank()&&!((TextField) EventDate.getEditor()).getText().isBlank()&&!EventTime.getText().isBlank()&&!EventLink.getText().isBlank()&&!EventCatergory.getText().isBlank()) {
             DatabaseConnection connection = new DatabaseConnection();
             Connection connectDB = connection.getConnected();
-            String u = "UPDATE Event_Details SET EventName='" + Eventname.getText() + "',EventCategory='" + EventCatergory.getText() + "',EventLink='" + EventLink.getText() + "',EventDetails='" + EventDetails.getText() + "',EventDate='" + EventDate.getText() + "',EventTime='" + EventTime.getText() + "' WHERE eId=" + a;
+            String u = "UPDATE Event_Details SET EventName='" + Eventname.getText() + "',EventCategory='" + EventCatergory.getText() + "',EventLink='" + EventLink.getText() + "',EventDetails='" + EventDetails.getText() + "',EventDate='" + ((TextField) EventDate.getEditor()).getText() + "',EventTime='" + EventTime.getText() + "' WHERE eId=" + a;
             try {
                 Statement statement = connectDB.createStatement();
                 statement.executeUpdate(u);
