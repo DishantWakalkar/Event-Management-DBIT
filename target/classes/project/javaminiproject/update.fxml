@@ -1,77 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.javaminiproject.MainController">
    <children>
-      <VBox prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #1c1c1c;">
-         <children>
-            <Label prefHeight="59.0" prefWidth="228.0" style="-fx-background-color: #79137c;" text="      UPDATE" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Times New Roman" size="30.0" />
-               </font>
-            </Label>
-            <Button mnemonicParsing="false" onAction="#switchToadmin" prefHeight="33.0" prefWidth="113.0" style="-fx-background-color: #79137c;" text="Back" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Times New Roman Bold" size="16.0" />
-               </font>
-               <VBox.margin>
-                  <Insets left="50.0" top="10.0" />
-               </VBox.margin>
-            </Button>
-         </children>
-      </VBox>
-      <TextField fx:id="Eventname" layoutX="372.0" layoutY="88.0" promptText="Event Name" />
-      <TextField fx:id="EventDetails" layoutX="374.0" layoutY="153.0" prefHeight="59.0" prefWidth="295.0" promptText="Details" />
-      <TextField fx:id="EventCatergory" layoutX="374.0" layoutY="233.0" promptText="Category" />
-      <TextField fx:id="EventTime" layoutX="372.0" layoutY="304.0" promptText="Time" />
-      <Button layoutX="446.0" layoutY="485.0" mnemonicParsing="false" onAction="#update" prefHeight="33.0" prefWidth="113.0" style="-fx-background-color: #79137c;" text="Save change" textFill="WHITE">
+      <TextField fx:id="Eventname" layoutX="499.0" layoutY="104.0" promptText="Event Name" />
+      <TextField fx:id="EventDetails" layoutX="499.0" layoutY="150.0" prefHeight="60.0" prefWidth="227.0" promptText="Details" />
+      <TextField fx:id="EventCatergory" layoutX="499.0" layoutY="230.0" promptText="Category" />
+      <TextField fx:id="EventTime" layoutX="499.0" layoutY="291.0" promptText="Time" />
+      <Button layoutX="430.0" layoutY="473.0" mnemonicParsing="false" onAction="#update" prefHeight="33.0" prefWidth="113.0" style="-fx-background-color: #79137c;" text="Save change" textFill="WHITE">
          <font>
             <Font name="Times New Roman Bold" size="16.0" />
          </font></Button>
-      <Button layoutX="645.0" layoutY="44.0" mnemonicParsing="false" onAction="#uRefresh" prefHeight="33.0" prefWidth="113.0" style="-fx-background-color: #79137c;" text="Refresh" textFill="WHITE">
+      <Button layoutX="651.0" layoutY="38.0" mnemonicParsing="false" onAction="#uRefresh" prefHeight="33.0" prefWidth="113.0" style="-fx-background-color: #79137c;" text="Refresh" textFill="WHITE">
          <font>
             <Font name="Times New Roman Bold" size="16.0" />
          </font></Button>
-      <TextField fx:id="EventLink" layoutX="374.0" layoutY="415.0" promptText="Link" />
-      <Text layoutX="256.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Name :">
+      <TextField fx:id="EventLink" layoutX="499.0" layoutY="412.0" promptText="Link" />
+      <Text layoutX="349.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Name :">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <Text layoutX="256.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details :">
+      <Text layoutX="350.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details :" wrappingWidth="87.275390625">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <Text layoutX="256.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Catergory :">
+      <Text layoutX="350.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Catergory :" wrappingWidth="87.275390625">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <Text layoutX="254.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time :">
+      <Text layoutX="350.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Link :" wrappingWidth="87.275390625">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <Text layoutX="255.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :">
+      <DatePicker fx:id="EventDate" layoutX="499.0" layoutY="349.0" prefHeight="25.0" prefWidth="149.0" promptText="Select Date" />
+      <ImageView fitHeight="185.0" fitWidth="330.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Update.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="34.0" layoutY="38.0" mnemonicParsing="false" onAction="#switchToadmin" prefHeight="33.0" prefWidth="113.0" style="-fx-background-color: #79137c;" text="Back" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Button>
+      <Text layoutX="91.0" layoutY="421.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UPDATE" textAlignment="CENTER" wrappingWidth="135.51708984375">
+         <font>
+            <Font name="Sitka Text" size="34.0" />
+         </font>
+      </Text>
+      <Text layoutX="350.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="87.275390625" AnchorPane.leftAnchor="350.0">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <Text layoutX="257.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Link :">
+      <Text layoutX="350.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time :" wrappingWidth="87.275390625">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <DatePicker fx:id="EventDate" layoutX="374.0" layoutY="363.0" prefHeight="25.0" prefWidth="149.0" promptText="Select Date" />
    </children>
 </AnchorPane>
