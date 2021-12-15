@@ -31,7 +31,7 @@ public class MainController {
     @FXML
     private Label eDate;
     @FXML
-    private Label eLink;
+    private Hyperlink eLink;
     //refresh button
     public void initial(ActionEvent event) throws IOException {
         DatabaseConnection connection = new DatabaseConnection();
