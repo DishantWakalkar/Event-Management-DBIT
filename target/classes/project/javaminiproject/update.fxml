@@ -15,13 +15,13 @@
       <TextField fx:id="EventDetails" layoutX="499.0" layoutY="150.0" prefHeight="60.0" prefWidth="227.0" promptText="Details" />
       <TextField fx:id="EventCatergory" layoutX="499.0" layoutY="230.0" promptText="Category" />
       <TextField fx:id="EventTime" layoutX="499.0" layoutY="291.0" promptText="Time" />
-      <Button layoutX="430.0" layoutY="473.0" mnemonicParsing="false" onAction="#update" prefHeight="33.0" prefWidth="113.0" style="-fx-background-color: #79137c;" text="Save change" textFill="WHITE">
+      <Button layoutX="430.0" layoutY="473.0" mnemonicParsing="false" onAction="#update" prefHeight="35.0" prefWidth="127.0" style="-fx-background-color: #79137c;" text="Save changes" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Times New Roman Bold" size="16.0" />
+            <Font name="System Bold" size="16.0" />
          </font></Button>
       <Button layoutX="651.0" layoutY="38.0" mnemonicParsing="false" onAction="#uRefresh" prefHeight="33.0" prefWidth="113.0" style="-fx-background-color: #79137c;" text="Refresh" textFill="WHITE">
          <font>
-            <Font name="Times New Roman Bold" size="16.0" />
+            <Font name="System Bold" size="16.0" />
          </font></Button>
       <TextField fx:id="EventLink" layoutX="499.0" layoutY="412.0" promptText="Link" />
       <Text layoutX="349.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Name :">
@@ -52,7 +52,7 @@
       </ImageView>
       <Button layoutX="34.0" layoutY="38.0" mnemonicParsing="false" onAction="#switchToadmin" prefHeight="33.0" prefWidth="113.0" style="-fx-background-color: #79137c;" text="Back" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Times New Roman Bold" size="16.0" />
+            <Font name="System Bold" size="16.0" />
          </font>
       </Button>
       <Text layoutX="91.0" layoutY="421.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UPDATE" textAlignment="CENTER" wrappingWidth="135.51708984375">
